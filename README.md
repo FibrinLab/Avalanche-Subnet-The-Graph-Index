@@ -228,7 +228,7 @@ If these instructions are followed correctly, you should have these tools up and
 
 ![ipfs2](/images/27.png "ipfs2")
 
-## Step 2: Spinning up the Node
+## Step 2: Spinning up Dependencies
 
 After sucessfully installing IPFS, initialise the daemon by running
 
@@ -262,22 +262,7 @@ pg_ctl -D .postgres -l logfile start
 createdb graph-node
 ```
 
-## Step 3: Grabbing the repo.
-
-Clone the official subgraph repository and install all the dependencies
-
-```zsh
-git clone https://github.com/graphprotocol/example-subgraph
-```
-
-Next, generate the ABI typings
-
-```zsh
-yarn
-yarn codegen
-```
-
-## Step 4: Setting up the Node
+## Step 3: Setting up The Graph Node
 
 Clone and build `The Graph` node folder
 
@@ -315,3 +300,77 @@ Before running the above make sure you replace the following:
 If everything goes smoothly. You should get this.
 
 ![success](/images/31.png "success")
+
+
+## Step 4: Deploying the SubGraph
+
+This is where things get interesting. Change directory into the `example-subgraph folder 
+
+Clone the official subgraph repository and install all the dependencies
+
+```zsh
+git clone https://github.com/graphprotocol/example-subgraph
+```
+
+Next, generate the ABI typings
+
+```zsh
+yarn
+yarn codegen
+```
+
+Open you the `subgraph.yaml` file and make 2 (two) modifications under `datasources`.
+
+1. Switch the network to `local`
+
+![local](/images/32.png "local")
+
+
+2. Input the address of the deployed `Gravity` contract in the `address` field
+
+![address](/images/33.png "address")
+
+
+Finally, run the following
+
+```zsh
+yarn create-local
+yarn deploy-local
+```
+
+Congratulations, you have sucessfully deployed a Sub-Graph on a locally deployed subnet.
+
+![done](/images/34.png "done")
+
+After successful deployment, you graph node would need a few minutes to scan all the nodes. 
+
+![done2](/images/35.png "done2")
+
+Once its done, open up the provided link in the browser.
+
+![graph](/images/36.png "graph").
+
+
+Open up the link and try running a query by filling this into the query box.
+
+```zsh
+query MyQuery {
+  gravatars {
+    id
+    imageUrl
+    displayName
+  }
+}
+```
+
+Watch the magic happen.
+
+![graph1](/images/37.png "graph1").
+
+# Conclusion
+
+Feel free to fork this repository and build great stuff.
+
+Cheers and Happy Coding.
+
+Akanimoh Osutuk
