@@ -1,0 +1,8 @@
+{
+  "name": "avax_graph_tutorial",
+  "version": "1.0.0",
+  "description": "indexing local subnets with theGraph Protocol",
+  "main": "index.js",
+  "author": "Akanimoh Osutuk",
+  "license": "MIT"
+}
