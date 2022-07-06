@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Avalanche is an open-source platform for launching decentralized applications and enterprise blockchain deployments in one interoperable, highly scalable ecosystem. Avalanche is the first decentralized smart contracts platform built for the scale of global finance, with near-instant transaction finality. Avalanche is a blockchain that promises to combine scaling capabilities and quick confirmation times through its Avalanche Consensus Protocol. It can process 4,500 TPS (transactions per second). For Ethereum, that number is 14 TPS.
+[Avalanche](https://www.avax.network/) is an open-source platform for launching decentralized applications and enterprise blockchain deployments in one interoperable, highly scalable ecosystem. Avalanche is the first decentralized smart contracts platform built for the scale of global finance, with near-instant transaction finality. Avalanche is a blockchain that promises to combine scaling capabilities and quick confirmation times through its Avalanche Consensus Protocol. It can process 4,500 TPS (transactions per second). For Ethereum, that number is 14 TPS.
 
 ![avax](/images/1.jpeg "avax")
 
@@ -14,6 +14,8 @@ Avalanche is a high-performance, scalable, customizable, and secure blockchain p
 deployments.
 * Building and launching highly scalable and decentralized applications (Dapps).
 * Building arbitrarily complex digital assets with custom rules, covenants, and riders (smart assets).
+
+![cost](/images/38.jpeg "cost")
 
 # Avalanche features 3 built-in blockchains: 
 * Exchange Chain (X-Chain)
@@ -32,12 +34,14 @@ The Avalanche Architecture is composed of:
 
 # The Graph Protocol
 
-The Graph is an open-sourced indexing protocol for organising blockchain data and making it easily accessible using GraphQL. This software collects, processes and stores data from various blockchain applications to facilitate effecient information retrieval. The Graph stored data into various indices called Subgraphs, allowing applications to query it. These queries are initiated using GraphQL, a language originally created by facebook. The Graph has the ability to query networks like Ethereum and IPFS. Anyone can build and publish open subgraphs.
+[The Graph](https://thegraph.com/) is an open-sourced indexing protocol for organising blockchain data and making it easily accessible using [GraphQL](https://graphql.org/). This software collects, processes and stores data from various blockchain applications to facilitate effecient information retrieval. The Graph stored data into various indices called Subgraphs, allowing applications to query it. These queries are initiated using GraphQL, a language originally created by facebook. The Graph has the ability to query networks like Ethereum and IPFS. Anyone can build and publish open subgraphs.
 
 
 ![graph](/images/21.png "graph")
 
-## Prerequisites
+
+
+# Prerequisites
 
 ### NodeJS and Yarn
 
@@ -60,7 +64,7 @@ git --version
 
 # Roadmap
 
-This tutorial is created to serve as a guide to help developers setup an Avalanche Subnet and Index them using graphQl. We are going to learn how to run a local network using the `avalanche-cli` and deploy a basic smart contract using `Remix` and `Hardhat`. Then Lastly we will be indexing our subnet using The Graph. This guide is an extension of the [Official Avalanche Documentation]().
+This tutorial is created to serve as a guide to help developers setup an Avalanche Subnet and Index them using graphQl. We are going to learn how to run a local network using the [Avalanche-cli](https://github.com/ava-labs/avalanche-cli) and deploy a basic smart contract using [Remix](https://remix.ethereum.org/). Then Lastly we will be indexing our subnet using [The Graph](https://thegraph.com/). This guide is an extension of the [Official Avalanche Documentation]().
 
 Please note that all command line inputs and sample codes are MacOs and Linux Based. Commands may vary for other operating systems.
 
