@@ -219,7 +219,8 @@ Please take note of the deployment address as we will be making use of it subseq
 # 3. Indexing our subnet using The Graph
 
 ## Stap 1: Getting setup
-The most efficient way to make use of The Graph in indexing our subnet is to host a local Graph Node. This is pretty striaghtforwards to setup once you got requirements up and running. This tutorial is an extension of the [Graph-Node](https://github.com/graphprotocol/graph-node) github repo.
+
+The most efficient way to make use of The Graph in indexing our subnet is to host a local Graph Node. This is pretty striaghtforwards to setup once you got requirements up and running. This tutorial is an extension of the [Graph-Node](https://github.com/graphprotocol/graph-node) Github repository.
 
 The following components are needed:
 * Interplanetary File System (IPFS) for hosting our files. [Installation](https://docs.ipfs.io/install/) instructions.
@@ -227,7 +228,7 @@ The following components are needed:
 * Rust, we will be building and compiling The Graph Node using the cargo package manager. [Installation](https://www.rust-lang.org/en-US/install.html) instructions.
 
 
-If these instructions are followed correctly, you should have these tools up and running.
+If the above installation instructions are followed correctly, you should have these tools up and running.
 
 ![ipfs](/images/26.png "ipfs")
 
@@ -309,7 +310,7 @@ If everything goes smoothly. You should get this.
 
 ## Step 4: Deploying the SubGraph
 
-This is where things get interesting. Change directory into the `example-subgraph folder 
+This is where things get interesting. Change directory into the `example-subgraph` folder 
 
 Clone the official subgraph repository and install all the dependencies
 
@@ -373,6 +374,8 @@ Watch the magic happen.
 ![graph1](/images/37.png "graph1").
 
 # Conclusion
+
+In summary, we have deployed a Local Subnet using the Avalanche-cli. We further went ahead to deploy smart contracts, run a Graph node and Index our nodes using `The Graph`. How cool is that? lol.
 
 Feel free to fork this repository and build great stuff.
 
