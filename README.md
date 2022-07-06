@@ -64,7 +64,7 @@ git --version
 
 # Roadmap
 
-This tutorial is created to serve as a guide to help developers setup an Avalanche Subnet and Index them using graphQl. We are going to learn how to run a local network using the [Avalanche-cli](https://github.com/ava-labs/avalanche-cli) and deploy a basic smart contract using [Remix](https://remix.ethereum.org/). Then Lastly we will be indexing our subnet using [The Graph](https://thegraph.com/). This guide is an extension of the [Official Avalanche Documentation]().
+This tutorial is created to serve as a guide to help developers setup an Avalanche Subnet and Index them using graphQl. We are going to learn how to run a local network using the [Avalanche-cli](https://github.com/ava-labs/avalanche-cli) and deploy a basic smart contract using [Remix](https://remix.ethereum.org/). Then Lastly we will be indexing our subnet using [The Graph](https://thegraph.com/). This guide is an extension of the [Official Avalanche Documentation](https://docs.avax.network/subnets/create-a-local-subnet).
 
 Please note that all command line inputs and sample codes are MacOs and Linux Based. Commands may vary for other operating systems.
 
@@ -76,20 +76,20 @@ In summary, we will be discussing the following:
 
 # 1. Running an EVM Subnet on the Local Network using the Avalanche-cli
 
-We will be creating an EVM on our local machine to give us a basic feel on how a subnet functions. The [Avalanche-CLI](https://github.com/ava-labs/avalanche-cli) is a novel tool that allow up to have a local network up in minutes.
+We will be creating an EVM on our local machine to give us a basic feel on how a subnet functions. The [Avalanche-CLI](https://github.com/ava-labs/avalanche-cli) is a novel tool that allow us to have a local network up in minutes.
 
 
 ## Step 1: Installation
 
 Open up you MacOs command line utility and run the following command
 
-On your home directory, create a new and `cd <newdir>` into the directory. This is where we will be installing all our project dependencies.
+On your home directory, create a new directory and `cd <newdir>` into the directory. This is where we will be installing all our project dependencies.
 
 ```zsh
 curl -sSfL https://raw.githubusercontent.com/ava-labs/avalanche-cli/main/scripts/install.sh | sh -s
 ```
 
-This command download the latest binary of the [Avalanche-cli] to the current directory where it was executed.
+This command download the latest binary of the [Avalanche-CLI](https://github.com/ava-labs/avalanche-cli) to the current directory where it was executed.
 
 `cd` into the `bin` folder and export the path variable
 
@@ -98,14 +98,14 @@ cd bin
 export PATH=$PWD:PATH
 ```
 
-This makes the `avalanche` command available globally. For more information about [environment-variables]() and [avalanche-cli-commands]() visit the respective links.
+This makes the `avalanche` command available globally. For more information about [environment-variables](https://apple.stackexchange.com/questions/106778/how-do-i-set-environment-variables-on-os-x) and [avalanche-cli-commands](https://docs.avax.network/subnets/create-a-local-subnet#quickstart) visit the respective links.
 
 ![variables](/images/cover.jpeg "variables")
 
 
 ## Step 2: Initilizing a default subnet
 
-We will be using the `avalanche subnet create` command line wizard to get our network running. STAT.
+We will be using the `avalanche subnet create` command line wizard to get our network running. ASAP.
 In the same directory where the binary was installed, run the following command
 
 ```zsh
@@ -117,9 +117,9 @@ Substitute `<subnetName>` with any perferred name of your choice but without spa
 avalanche subnet create fibrinNet
 ```
 
-Since this command does not provide any arguements, you would neeed to walk through the configuration wizard to generate a genesis file for your network.
+Since this command does not provide any arguements, you would neeed to walk through the configuration wizard to generate a `genesis file` for your network.
 
-* Choose a VM: 
+* Choose a Virtual Machine (VM): 
   ![choose a VM](/images/2.png "Choose VM")
   We are going to be making use of the `SubnetEVM`
 
@@ -162,12 +162,14 @@ avalanche subnet deploy <subnetName>
 
 ![deploy](/images/10.png "deploy")
 
-When a subnet is run locally, it starts a multi-node Avalanche Network in the background.
+When a subnet is run locally, it starts a multi-node (5 node) Avalanche Network in the background.
 
 ![deploy_f](/images/11.png "deploy_f")
 
 To test the functionality of the just created subnet, go ahead and add the configuration details to [Metamask](https://metamask.io/).
 You can create a new metamask account by importing the private key `0x56289e99c94b6912bfc12adc093c9b51124f0dc54ac7a766b2bc5ccf558d8027` and start experiencing with this account.
+
+I have a [Github Tutorial](https://github.com/FibrinLab/Avalanche-Local-Environment-Setup) that explains how to setup your local development environmet including `Metamask`. 
 
 Lastly don't forget to stop the running local network
 ```zsh
@@ -176,17 +178,14 @@ avalanche network stop <snapshotName>
 
 ![deploy_f](/images/12.png "deploy_f")
 
-I created another tutorial that guides you on how to setup metamask. [click_me]()
-
-
 
 
 # 2. Deploying smart contracts with Remix
 
 ## Step 1
-We are going to be making use of an online IDE in compiling and deploying our smart contract code, a tool called [Remix]().
+We are going to be making use of an online IDE in compiling and deploying our smart contract code, a tool called [Remix](https://remix.ethereum.org/).
 
-Navigate to the [Remix]() platform and import the test contract we will be making use of.
+Navigate to the [Remix](https://remix.ethereum.org/) platform and import the test contract we will be making use of.
 
 ![github](/images/22.png "github")
 
@@ -194,7 +193,7 @@ Navigate to the [Remix]() platform and import the test contract we will be makin
 https://github.com/FibrinLab/example-subgraph/blob/master/contracts/Gravity.sol
 ```
 
-This repo contains the official sample subgraph for the [gravatar]() registry.
+This repo contains the official sample subgraph for the [gravatar](https://en.gravatar.com/) registry.
 
 ## Step 2
 Compile and deploy the `Gravity` smart contract using the Local Subnet you just created. To do this select the `deploy` tab and choose `injected web3` from the dropdwown. `Please note that Remix automatically detects the appropriate compiler version and makes use of it to compile your contract.
@@ -214,6 +213,8 @@ If the the deployment is successful, you should see something like this ===>
 Please take note of the deployment address as we will be making use of it subsequently.
 
 ![deploy2](/images/25.png "deploy2")
+
+
 
 # 3. Indexing our subnet using The Graph
 
